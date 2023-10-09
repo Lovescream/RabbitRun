@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rabbit : MonoBehaviour {
+public class Rabbit : MonoBehaviour
+{
 
     #region Inspector
 
@@ -10,6 +11,14 @@ public class Rabbit : MonoBehaviour {
     [SerializeField]
     [Tooltip("토끼의 점프 높이")]
     private float jumpHeight;
+    [SerializeField]
+    [Tooltip("무한 점프 방지")]
+    private LayerMask groundLayer;
+    private BoxCollider2D boxCollider2D;
+    private bool isGrounded;
+    private Vector3 footPosition;
+
+
 
     #endregion
 
@@ -17,6 +26,8 @@ public class Rabbit : MonoBehaviour {
 
     // States.
     private bool isJumping;
+
+
 
     // Components.
     private Rigidbody2D rigid;
@@ -26,14 +37,24 @@ public class Rabbit : MonoBehaviour {
 
     #region MonoBehaviours
 
-    void Awake() {
+    void Awake()
+    {
         // Connect components.
         this.rigid = this.GetComponent<Rigidbody2D>();
         this.animator = this.GetComponent<Animator>();
+        this.boxCollider2D = this.GetComponent<BoxCollider2D>();
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+    void Update()
+    {
+        // 무한 점프 방지
+        Bounds bounds = boxCollider2D.bounds;
+        footPosition = new Vector2(bounds.center.x, bounds.min.y);
+
+        isGrounded = Physics2D.OverlapCircle(footPosition, 0.1f, groundLayer);
+
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
             // #1. 상태 변경 및 애니메이션 상태 변경.
             isJumping = true;
             animator.SetBool("IsJump", true);
@@ -44,11 +65,14 @@ public class Rabbit : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         // 닿은 물체의 태그가 Ground라면,
-        if (collision.transform.CompareTag("Ground")) {
+        if (collision.transform.CompareTag("Ground"))
+        {
             // 점프 상태라면,
-            if (isJumping) {
+            if (isJumping)
+            {
                 // #1. 상태 변경 및 애니메이션 상태 변경.
                 isJumping = false;
                 animator.SetBool("IsJump", false);
@@ -58,6 +82,9 @@ public class Rabbit : MonoBehaviour {
             }
         }
     }
+
+
+
 
     #endregion
 
