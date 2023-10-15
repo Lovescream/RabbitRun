@@ -25,4 +25,10 @@ public class Carrots : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        // ==== 토끼가 당근을 냠 했을 때 처리 ====
+
+        // =======================================
+    }
 }

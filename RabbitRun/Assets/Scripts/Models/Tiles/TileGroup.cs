@@ -12,7 +12,7 @@ public class TileGroup : MonoBehaviour {
 
     [Header("Scrolling")]
     [SerializeField]
-    private float scrollSpeed;
+    private float scrollingRatio;
 
     #endregion
 
@@ -32,7 +32,7 @@ public class TileGroup : MonoBehaviour {
         for (int i = 0; i < this.transform.childCount; i++) {
             Tile tile = this.transform.GetChild(i).GetComponent<Tile>();
             tiles.Add(tile);
-            tile.Initialize(this, sprites[i % sprites.Count], scrollSpeed);
+            tile.Initialize(this, sprites[i % sprites.Count], scrollingRatio);
 
             float x = tile.transform.position.x;
             if (x < MinX) MinX = x;

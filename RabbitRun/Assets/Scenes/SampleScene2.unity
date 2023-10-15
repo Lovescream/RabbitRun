@@ -1774,7 +1774,7 @@ MonoBehaviour:
   - {fileID: 1375468423, guid: 2866a188a961c0846b1851bfc98f12ad, type: 3}
   - {fileID: 1721736138, guid: 2866a188a961c0846b1851bfc98f12ad, type: 3}
   - {fileID: 1815397565, guid: 2866a188a961c0846b1851bfc98f12ad, type: 3}
-  scrollSpeed: 2
+  scrollingRatio: 1
 --- !u!1 &238165694
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,7 +6613,7 @@ MonoBehaviour:
   - {fileID: 1318261708, guid: 5b7aa7b9d3d2323498daa39536e7189f, type: 3}
   - {fileID: 1168577090, guid: 5b7aa7b9d3d2323498daa39536e7189f, type: 3}
   - {fileID: 1895175507, guid: 5b7aa7b9d3d2323498daa39536e7189f, type: 3}
-  scrollSpeed: 1.2
+  scrollingRatio: 0.9
 --- !u!1 &1543784821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6625,7 +6625,7 @@ GameObject:
   - component: {fileID: 1543784823}
   - component: {fileID: 1543784822}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: "\u2606\u2605\uAE68\uC784\uBA54\uB2C8\uC800\u2605\u2606"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6643,7 +6643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a805e88b2345d9544883df69a17cbfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreBonus: 2
+  scrollSpeed: 1.234567
+  scrollSpeedRatio: 0.210987
+  scoreBonus: 3
 --- !u!4 &1543784823
 Transform:
   m_ObjectHideFlags: 0
@@ -6810,7 +6812,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8483281626818359214, guid: 28c61d30e52089842b2644c96a25a0b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -7729,7 +7731,7 @@ MonoBehaviour:
   - {fileID: -1908100716, guid: 335c1a68a3ca0444cb24e05b05db0762, type: 3}
   - {fileID: -582696998, guid: 335c1a68a3ca0444cb24e05b05db0762, type: 3}
   - {fileID: -1033299980, guid: 335c1a68a3ca0444cb24e05b05db0762, type: 3}
-  scrollSpeed: 1.6
+  scrollingRatio: 0.95
 --- !u!1 &1731388100
 GameObject:
   m_ObjectHideFlags: 0
