@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class CarrotRespawn : MonoBehaviour
 {
     public List<GameObject> CarrotPool = new List<GameObject>();
     public GameObject[] Carrots;
+
     // 카메라 뷰 하나에 나오는 최대 당근 갯수
     public int objCnt = 1;
 
@@ -36,9 +38,11 @@ public class CarrotRespawn : MonoBehaviour
 
     GameObject CreateObj(GameObject obj, Transform parent)
     {
+
         GameObject copy = Instantiate(obj);
         copy.transform.SetParent(parent);
         copy.SetActive(false);
+        
         return copy;
     }
 
