@@ -42,7 +42,9 @@ public class CarrotRespawn : MonoBehaviour
         GameObject copy = Instantiate(obj);
         copy.transform.SetParent(parent);
         copy.SetActive(false);
-        
+        copy.transform.name = $"Carrot[{Random.Range(0, 1234)}]";
+
+
         return copy;
     }
 

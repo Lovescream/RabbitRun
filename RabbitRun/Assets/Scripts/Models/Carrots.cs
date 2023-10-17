@@ -46,7 +46,10 @@ public class Carrots : MonoBehaviour
         // ==== 토끼가 당근을 냠 했을 때 처리 ====
 
         Collider2D[] hit = Physics2D.OverlapBoxAll(transform.position, size, 0, whatIsLayer);
-        Debug.Log(hit);
+        foreach (Collider2D h in hit) {
+            if (h.transform == this.transform) continue;
+            Debug.Log(h.name);
+        }
         transform.position = TemPosition;
 
         // =======================================
