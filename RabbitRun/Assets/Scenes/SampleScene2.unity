@@ -7683,7 +7683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22850b00484d20345986530d503d8e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carrotPrefab: {fileID: 0}
+  carrotPrefab: {fileID: 7696336981077759015, guid: 7d8b3201bbd94e44f88928ae81abf0db, type: 3}
   carrotIntervalMin: 1
   carrotIntervalMax: 3
   carrotSpeedMin: 1
