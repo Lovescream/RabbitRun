@@ -7683,7 +7683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22850b00484d20345986530d503d8e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carrot: {fileID: 520116903935454970, guid: 7d8b3201bbd94e44f88928ae81abf0db, type: 3}
+  carrotPrefab: {fileID: 0}
+  carrotIntervalMin: 1
+  carrotIntervalMax: 3
+  carrotSpeedMin: 1
+  carrotSpeedMax: 3
 --- !u!4 &1682845581
 Transform:
   m_ObjectHideFlags: 0
@@ -9434,6 +9438,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1543784823}
+  - {fileID: 1682845581}
   - {fileID: 2130344800}
   - {fileID: 1564786304}
   - {fileID: 1569471525}
@@ -9442,4 +9447,3 @@ SceneRoots:
   - {fileID: 1724297509}
   - {fileID: 200582565}
   - {fileID: 196863074}
-  - {fileID: 1682845581}
