@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4961641291234397861}
   - component: {fileID: 3773937462341359558}
   - component: {fileID: 450488832235386287}
+  - component: {fileID: 3448594587427128374}
   m_Layer: 0
   m_Name: Squirrel
   m_TagString: Untagged
@@ -144,3 +145,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb69bd4da03d25a459d92ab2a40aa78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3448594587427128374
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616945058586564945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 542f104c4685e264da3175459b9fcb3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
