@@ -49,4 +49,8 @@ public class GameManager : MonoBehaviour {
         playTime += Time.deltaTime;
     }
 
+    public void gameOver() {
+        Time.timeScale = 0.0f;
+    }
+
 }

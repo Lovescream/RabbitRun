@@ -8895,6 +8895,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4183d7d13426364d9c114ff68d55b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2030703174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030703175}
+  - component: {fileID: 2030703176}
+  m_Layer: 0
+  m_Name: SquirrelSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030703175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030703174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2030703176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030703174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed6c6ae6b519ac468c181dab9da3efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squirrelPrefab: {fileID: 450488832235386287, guid: 1fb57405827f2e04f92ccb4219edcb10, type: 3}
+  squirrelIntervalMin: 3
+  squirrelIntervalMax: 5
+  squirrelSpeedMin: 0.5
+  squirrelSpeedMax: 1.5
 --- !u!1 &2060576319
 GameObject:
   m_ObjectHideFlags: 0
@@ -9439,6 +9488,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1543784823}
   - {fileID: 1682845581}
+  - {fileID: 2030703175}
   - {fileID: 2130344800}
   - {fileID: 1564786304}
   - {fileID: 1569471525}
