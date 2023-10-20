@@ -41,7 +41,7 @@ public class SquirrelSpawn : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance.IsOver) return;
-        // Timer가 0이 되면 당근 소환.
+        // Timer가 0이 되면 다람쥐 소환.
         squirrelSpawnTimer -= Time.deltaTime;
         if (squirrelSpawnTimer <= 0)
         {
