@@ -12,6 +12,7 @@ public class Tile : MonoBehaviour {
     #endregion
 
     void Update() {
+        if (GameManager.Instance.IsOver) return;
         // 왼쪽으로 조금 이동.
         this.transform.position += Vector3.left * GameManager.Instance.ScrollSpeed * ratio * Time.deltaTime;
         // 왼쪽 경계를 넘었으면, 오른쪽 경계로 이동 후 넘은 만큼 재이동.

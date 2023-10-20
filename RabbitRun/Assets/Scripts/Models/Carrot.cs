@@ -18,6 +18,7 @@ public class Carrot : MonoBehaviour {
     #region MonoBehaviours
 
     void Update() {
+        if (GameManager.Instance.IsOver) return;
         transform.position += new Vector3(-speed * Time.deltaTime, 0f, 0f);
         if (this.transform.position.x < -12f) {
             Destroy(this.gameObject);
@@ -26,7 +27,7 @@ public class Carrot : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {            // Tag 비교는 CompareTag를 사용하는 것이 낫습니다!
-            Debug.Log("냠");
+            GameManager.Instance.OnNyamCarrot();
             Destroy(this.gameObject);
         }
     }

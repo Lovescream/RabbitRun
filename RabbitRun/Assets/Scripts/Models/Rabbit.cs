@@ -23,12 +23,14 @@ public class Rabbit : MonoBehaviour {
     private bool isGrounded;
     private Vector3 footPosition;
 
-
-
     // Components.
     private Rigidbody2D rigid;
     private BoxCollider2D boxCollider2D;
     private Animator animator;
+
+    // Coroutine.
+    private Coroutine coDead_Rotate;
+    private Coroutine coDead_Fly;
 
     #endregion
 
@@ -42,6 +44,11 @@ public class Rabbit : MonoBehaviour {
     }
 
     void Update() {
+        if (GameManager.Instance.IsOver) {
+            if (coDead_Rotate == null) coDead_Rotate = StartCoroutine(으아아아아아억돌아간다());
+            if (coDead_Fly == null) coDead_Fly = StartCoroutine(와아아어어으으악날라간다());
+            return;
+        }
         // 무한 점프 방지
         Bounds bounds = boxCollider2D.bounds;
         footPosition = new Vector2(bounds.center.x, bounds.min.y);
@@ -74,9 +81,30 @@ public class Rabbit : MonoBehaviour {
         }
     }
 
-
-
-
     #endregion
 
+    private IEnumerator 으아아아아아억돌아간다() {
+        this.GetComponent<Rigidbody2D>().simulated = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        while (true) {
+            this.transform.Rotate(new(0, 0, 1800 * Time.deltaTime));
+            yield return null;
+        }
+    }
+    private IEnumerator 와아아어어으으악날라간다() {
+        while (true) {
+            float time = Random.Range(1f, 2f);
+            float timer = 0;
+            while (timer < time) {
+                timer += Time.deltaTime;
+                float speed = Random.Range(20f, 30f);
+                float angle = Random.Range(0, Mathf.PI * 2);
+                Vector2 delta = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized * speed * Time.deltaTime;
+                this.transform.position += (Vector3)delta;
+                yield return null;
+            }
+            timer = 0;
+            yield return null;
+        }
+    }
 }

@@ -37,6 +37,7 @@ public class CarrotSpawn : MonoBehaviour{
     }
 
     void Update() {
+        if (GameManager.Instance.IsOver) return;
         // Timer가 0이 되면 당근 소환.
         carrotSpawnTimer -= Time.deltaTime;
         if (carrotSpawnTimer <= 0) {

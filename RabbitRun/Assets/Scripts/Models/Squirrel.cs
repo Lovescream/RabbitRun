@@ -8,8 +8,12 @@ public class Squirrel : MonoBehaviour
 {
 
     #region Fields
-
+    
+    // Status.
     private float speed;
+
+    // Components.
+    private Animator animator;
 
     #endregion
 
@@ -17,6 +21,7 @@ public class Squirrel : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.IsOver) return;
         transform.position += new Vector3(-speed * Time.deltaTime, 0f, 0f);
         if (this.transform.position.x < -12f)
         {
@@ -29,7 +34,8 @@ public class Squirrel : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {            // Tag 비교는 CompareTag를 사용하는 것이 낫습니다!
             Debug.Log("쥬금");
-            GameManager.Instance.gameOver();
+            GameManager.Instance.GameOver();
+            this.animator.SetBool("RabbitDead", true);
         }
     }
 
@@ -39,6 +45,7 @@ public class Squirrel : MonoBehaviour
 
     public void Initialize(float speed)
     {
+        this.animator = this.GetComponent<Animator>();
         this.speed = speed;
     }
 
